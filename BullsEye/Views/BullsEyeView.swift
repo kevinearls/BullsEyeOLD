@@ -14,11 +14,9 @@ struct BullsEyeView: View {
     
     var body: some View {
         VStack {
-            title
-            Text(String(game.target))
-                .kerning(-1.0)
-                .fontWeight(.black)
-                .font(.largeTitle)
+            InstructionsView(game: $game)
+                .padding(.leading)
+                .padding(.trailing)
             HStack {
                 Text("1").padding()
                 Slider(value: self.$sliderValue, in:1.0...100.0)
@@ -50,15 +48,19 @@ struct BullsEyeView: View {
              
         }
     }
-    var title: some View {
-        Text(" 🎯 🎯🎯\nPUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
-            .bold()
-            .kerning(2.0)
-            .multilineTextAlignment(.center)
-            .lineSpacing(4.0)
-            .font(.footnote)
+    
+    struct InstructionsView: View {
+        @Binding var game: Game
+        
+        var body: some View {
+            VStack {
+                InstructionsText(text: "🎯 🎯🎯\nPUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
+                BigNumberText(text: String(game.target))
+            }
+        }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -69,6 +69,7 @@ struct BullsEyeView: View {
               )
               .foregroundColor(Color.white)
               .cornerRadius(21.0)
+              .overlay(RoundedRectangle(cornerRadius: 21.0).strokeBorder(Color.white, lineWidth: 2.0))
               .alert(isPresented: $alertIsVisible, content: {
                 let roundedValue = Int(sliderValue.rounded())
                 return Alert(title: Text("Hello there!"), message: Text("The slider's value is \(roundedValue).\n" + "You scored \(game.points(sliderValue: roundedValue)) points this round."), dismissButton: .default(Text("Awesome!")))
@@ -80,7 +81,13 @@ struct BullsEyeView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        BullsEyeView()
-        BullsEyeView().previewLayout(.fixed(width: 568, height: 320))
+        BullsEyeView().preferredColorScheme(.dark)
+                //BullsEyeView()
+                //    .previewLayout(.fixed(width: 568, height: 320))
+                //BullsEyeView()
+                //    .preferredColorScheme(.dark)
+                //BullsEyeView()
+                //    .preferredColorScheme(.dark)
+                //    .previewLayout(.fixed(width: 568, height: 320))
     }
 }

@@ -18,9 +18,9 @@ struct BullsEyeView: View {
                 .padding(.leading)
                 .padding(.trailing)
             HStack {
-                Text("1").padding()
+                SliderLabelText(text: "1")
                 Slider(value: self.$sliderValue, in:1.0...100.0)
-                Text("100").bold().padding()
+                SliderLabelText(text: "100")
             }
             Button(action: {
                 self.alertIsVisible = true

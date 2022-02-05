@@ -37,9 +37,7 @@ struct SliderLabelText: View {
     
     var body: some View {
         Text(text)
-            .kerning(-1.0)
-            .font(.largeTitle)
-            .fontWeight(.black)
+            .bold()
             .foregroundColor(Color("TextColor"))
     }
 }

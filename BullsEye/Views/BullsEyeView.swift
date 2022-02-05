@@ -17,11 +17,7 @@ struct BullsEyeView: View {
             InstructionsView(game: $game)
                 .padding(.leading)
                 .padding(.trailing)
-            HStack {
-                SliderLabelText(text: "1")
-                Slider(value: self.$sliderValue, in:1.0...100.0)
-                SliderLabelText(text: "100")
-            }
+            SliderView(sliderValue: $sliderValue)
             Button(action: {
                 self.alertIsVisible = true
             }) {
@@ -57,6 +53,19 @@ struct BullsEyeView: View {
                 InstructionsText(text: "🎯 🎯🎯\nPUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
                 BigNumberText(text: String(game.target))
             }
+        }
+    }
+    
+    struct SliderView: View {
+        @Binding var sliderValue: Double
+        
+        var body: some View {
+            HStack {
+                SliderLabelText(text: "1")
+                Slider(value: self.$sliderValue, in:1.0...100.0)
+                SliderLabelText(text: "100")
+            }
+            .padding()
         }
     }
 }

@@ -13,12 +13,15 @@ struct BullsEyeView: View {
     @State private var game = Game()
     
     var body: some View {
-        VStack {
-            InstructionsView(game: $game)
-                .padding(.leading)
-                .padding(.trailing)
-            SliderView(sliderValue: $sliderValue)
-            HitMeButton(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+        ZStack {
+            BackGroundView(game: $game)
+            VStack {
+                InstructionsView(game: $game)
+                    .padding(.leading)
+                    .padding(.trailing)
+                SliderView(sliderValue: $sliderValue)
+                HitMeButton(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+            }
         }
     }
     

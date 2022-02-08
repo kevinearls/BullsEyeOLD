@@ -18,8 +18,8 @@ struct Game {
     }
     
     // game.startNewRound(points: data.points)
-    func startNewRound(points: Int) {
-        print("NYI...")
-        //target = Int.random(in: 1...100)
+    mutating func startNewRound(points: Int) {
+        score += points
+        round += 1
     }
 }

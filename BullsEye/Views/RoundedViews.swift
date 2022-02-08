@@ -22,6 +22,24 @@ struct RoundedImageViewStroked: View {
     }
 }
 
+struct RoundedRectTextView: View {
+    var text: String
+    
+    var body: some View {
+        Text(text.uppercased())
+            .bold()
+            .font(.title3)
+            .kerning(-0.2)
+            .foregroundColor(Color("TextColor"))
+            .frame(width: 68.0, height: 55.78)
+            .background(
+                RoundedRectangle(cornerRadius: 10.0)
+                    .stroke(lineWidth: 2.0)
+                    .foregroundColor(Color("ButtonStrokeColor"))
+            )
+    }
+}
+
 struct RoundedImageViewFilled: View {
     var systemName: String // must be the name of something from SFSymbolds
     
@@ -42,6 +60,7 @@ struct PreviewView: View {
         VStack {
             RoundedImageViewStroked(systemName: "arrow.counterclockwise")
             RoundedImageViewFilled(systemName: "list.dash")
+            RoundedRectTextView(text: "100")
         }
     }
 }

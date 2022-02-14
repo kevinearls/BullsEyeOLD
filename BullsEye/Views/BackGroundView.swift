@@ -17,9 +17,9 @@ struct BackGroundView: View {
         }
         .padding()
         .background(
-            Color("BackgroundColor")
-                .edgesIgnoringSafeArea(.all)
+            RingsView()
         )
+        
     }
 }
 
@@ -28,7 +28,12 @@ struct TopView: View {
     
     var body: some View {
         HStack {
-            RoundedImageViewStroked(systemName: "arrow.counterclockwise")
+            // This can also be done just by adding onTapGesture to RoundedRectangle
+            Button(action: {
+                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/game.restart()
+            }) {
+                RoundedImageViewStroked(systemName: "arrow.counterclockwise")
+            }
             Spacer()
             RoundedImageViewFilled(systemName: "list.dash")
         }
@@ -58,6 +63,23 @@ struct BottomView: View {
         }
     }
     
+}
+
+struct RingsView: View {
+    
+    var body: some View {
+        ZStack {
+            Color("BackgroundColor").edgesIgnoringSafeArea(.all)
+            ForEach(1..<6) { ring in
+                let size = CGFloat(ring * 100)
+                Circle()
+                    .stroke(lineWidth: 20.0)
+                    .frame(width: size, height: size)
+                    
+            }
+            //}
+        }
+    }
 }
 
 struct BackGroundView_Previews: PreviewProvider {

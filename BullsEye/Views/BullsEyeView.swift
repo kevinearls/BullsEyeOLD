@@ -56,8 +56,8 @@ struct BullsEyeView: View {
         
         var body: some View {
             Button(action: {
-              print("Hello, SwiftUI!")
-              alertIsVisible = true
+                alertIsVisible = true
+                //game.startNewRound(points: game.points(sliderValue: Int(sliderValue)))
             }) {
               Text("Hit me".uppercased())
                 .bold()
@@ -75,7 +75,13 @@ struct BullsEyeView: View {
               .overlay(RoundedRectangle(cornerRadius: 21.0).strokeBorder(Color.white, lineWidth: 2.0))
               .alert(isPresented: $alertIsVisible, content: {
                 let roundedValue = Int(sliderValue.rounded())
-                return Alert(title: Text("Hello there!"), message: Text("The slider's value is \(roundedValue).\n" + "You scored \(game.points(sliderValue: roundedValue)) points this round."), dismissButton: .default(Text("Awesome!")))
+                  let points = game.points(sliderValue: roundedValue)
+                return Alert(title: Text("Hello there!"),
+                    message: Text("The slider's value is \(roundedValue).\n" + "You scored \(points) points this round."),
+                    dismissButton: .default(Text("Awesome!")) {
+                    game.startNewRound(points: points)
+                    }
+                )
               })
           }
     }

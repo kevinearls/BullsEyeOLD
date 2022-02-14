@@ -17,11 +17,10 @@ struct BullsEyeView: View {
             BackGroundView(game: $game)
             VStack {
                 InstructionsView(game: $game)
-                    .padding(.leading)
-                    .padding(.trailing)
-                SliderView(sliderValue: $sliderValue)
+                    .padding(.bottom, 100)
                 HitMeButton(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
             }
+            SliderView(sliderValue: $sliderValue)
         }
     }
     

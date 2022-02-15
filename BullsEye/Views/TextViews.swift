@@ -55,6 +55,33 @@ struct LabelText: View {
     }
 }
 
+struct BodyText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .font(.subheadline)
+            .fontWeight(.semibold)
+            .multilineTextAlignment(.center)
+            .lineSpacing(12.0)
+    }
+}
+
+struct ButtonText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .bold()
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(
+                Color.accentColor
+            )
+            .foregroundColor(.white)
+            .cornerRadius(12.0)
+    }
+}
 
 
 struct TextViews_Previews: PreviewProvider {
@@ -63,7 +90,10 @@ struct TextViews_Previews: PreviewProvider {
             InstructionsText(text: "Here are your instructions")
             BigNumberText(text: "44")
             SliderLabelText(text: "100")
-            LabelText(text: "EAT ME")
+            LabelText(text: "Label Text")
+            BodyText(text: "You scored many points\n🎉 🎉 🎉")
+            ButtonText(text: "Click this button")
         }
+        .padding()
     }
 }

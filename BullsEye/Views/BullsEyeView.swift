@@ -19,11 +19,13 @@ struct BullsEyeView: View {
                 InstructionsView(game: $game).padding(.bottom, alertIsVisible ? 0 : 100)
                 if alertIsVisible {
                     PointsView(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+                        .transition(.scale)
                 } else {
                 HitMeButton(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+                    .transition(.scale)
             }
             if !alertIsVisible {
-                SliderView(sliderValue: $sliderValue)
+                SliderView(sliderValue: $sliderValue).transition(.scale)
             }
             }
         }
@@ -60,7 +62,9 @@ struct BullsEyeView: View {
         
         var body: some View {
             Button(action: {
-                alertIsVisible = true
+                withAnimation {
+                    alertIsVisible = true
+                }
                 //game.startNewRound(points: game.points(sliderValue: Int(sliderValue)))
             }) {
               Text("Hit me".uppercased())

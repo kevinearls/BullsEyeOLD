@@ -34,7 +34,7 @@ struct RoundedRectTextView: View {
             .frame(width: 68.0, height: 55.78)
             .background(
                 RoundedRectangle(cornerRadius: 10.0)
-                    .stroke(lineWidth: 2.0)
+                    .stroke(lineWidth: Constants.General.strokeWidth)
                     .foregroundColor(Color("ButtonStrokeColor"))
             )
     }

@@ -80,18 +80,8 @@ struct BullsEyeView: View {
               )
               .foregroundColor(Color.white)
               .cornerRadius(21.0)
-              .overlay(RoundedRectangle(cornerRadius: 21.0).strokeBorder(Color.white, lineWidth: 2.0))
-              /* .alert(isPresented: $alertIsVisible, content: {
-                let roundedValue = Int(sliderValue.rounded())
-                let points = game.points(sliderValue: roundedValue)
-                return Alert(title: Text("Hello there!"),
-                    message: Text("The slider's value is \(roundedValue).\n" + "You scored \(points) points this round."),
-                    dismissButton: .default(Text("Awesome!")) {
-                    game.startNewRound(points: points)
-                    }
-                )
-              }
-              ) */
+              .overlay(RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
+                        .strokeBorder(Color.white, lineWidth: Constants.General.strokeWidth))
           }
     }
 }

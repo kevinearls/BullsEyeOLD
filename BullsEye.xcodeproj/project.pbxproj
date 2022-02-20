@@ -18,6 +18,7 @@
 		96C1797427B193B7000E93F3 /* BackGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1797327B193B7000E93F3 /* BackGroundView.swift */; };
 		96CDC52427AEE3FA00ECE045 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CDC52327AEE3FA00ECE045 /* TextViews.swift */; };
 		96CDC52627AEF6D400ECE045 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CDC52527AEF6D400ECE045 /* Shapes.swift */; };
+		96D3F66327C2637C004A74FA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D3F66227C2637C004A74FA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		96C1797327B193B7000E93F3 /* BackGroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundView.swift; sourceTree = "<group>"; };
 		96CDC52327AEE3FA00ECE045 /* TextViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 		96CDC52527AEF6D400ECE045 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		96D3F66227C2637C004A74FA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				96677630279B16D000E73824 /* GameModel.swift */,
+				96D3F66227C2637C004A74FA /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				96CDC52627AEF6D400ECE045 /* Shapes.swift in Sources */,
 				966776222799A6CD00E73824 /* BullsEyeApp.swift in Sources */,
 				96677631279B16D000E73824 /* GameModel.swift in Sources */,
+				96D3F66327C2637C004A74FA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

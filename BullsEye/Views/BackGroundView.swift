@@ -25,17 +25,24 @@ struct BackGroundView: View {
 
 struct TopView: View {
     @Binding var game: Game
+    @State private var leaderBoardIsShowing = false
     
     var body: some View {
         HStack {
-            // This can also be done just by adding onTapGesture to RoundedRectangle
             Button(action: {
                 /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/game.restart()
             }) {
                 RoundedImageViewStroked(systemName: "arrow.counterclockwise")
             }
             Spacer()
-            RoundedImageViewFilled(systemName: "list.dash")
+            Button(action: {
+                leaderBoardIsShowing = true
+            })
+            {
+                RoundedImageViewFilled(systemName: "list.dash")
+            }.sheet(isPresented: $leaderBoardIsShowing,
+                    onDismiss: {},
+                    content: { LeaderboardView(leaderBoardIsShowing: $leaderBoardIsShowing) })
         }
     }
 }
